@@ -42,17 +42,17 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="glass border border-white/10 p-6 rounded-2xl hover:border-primary/50 hover:glow-green transition-all"
+          className="glass border border-gold/30 p-6 rounded-2xl hover:border-gold/50 hover:glow-gold transition-all"
         >
           <div className="flex items-center gap-1 mb-4">
             {[...Array(testimonial.rating)].map((_, i) => (
-              <Star key={i} size={20} className="fill-primary text-primary" />
+              <Star key={i} size={20} className="fill-gold text-gold" />
             ))}
           </div>
-          <p className="text-white/80 mb-4 italic">"{testimonial.text}"</p>
+          <p className="text-white/80 mb-4 italic font-body">"{testimonial.text}"</p>
           <div className="flex items-center justify-between">
-            <span className="font-semibold text-white">{testimonial.name}</span>
-            <span className="text-sm text-white/50">{testimonial.date}</span>
+            <span className="font-display font-semibold text-white">{testimonial.name}</span>
+            <span className="text-sm text-white/50 font-body">{testimonial.date}</span>
           </div>
         </motion.div>
       ))}

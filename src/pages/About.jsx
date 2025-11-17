@@ -24,14 +24,14 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.15),transparent_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-dark/20 via-gold/10 to-red-dark/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(164,23,18,0.15),transparent_70%)]" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-4 text-white"
+            className="text-5xl md:text-6xl font-display font-bold mb-4 text-white"
           >
             À propos de Plan B
           </motion.h1>
@@ -39,7 +39,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-white/80 max-w-2xl mx-auto"
+            className="text-xl text-white/80 max-w-2xl mx-auto font-body"
           >
             Votre snack pizzeria de quartier depuis toujours
           </motion.p>
@@ -57,8 +57,8 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold mb-6 text-white">Notre Histoire</h2>
-              <div className="space-y-4 text-lg text-white/70 text-left">
+              <h2 className="text-4xl font-display font-bold mb-6 text-white">Notre Histoire</h2>
+              <div className="space-y-4 text-lg text-white/70 text-left font-body">
                 <p>
                   Plan B est né d'une passion simple : offrir à nos clients des produits de qualité
                   dans une ambiance chaleureuse et conviviale. Depuis notre ouverture, nous avons
@@ -90,8 +90,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4 text-white">Nos Valeurs</h2>
-            <p className="text-xl text-white/70">
+            <h2 className="text-4xl font-display font-bold mb-4 text-white">Nos Valeurs</h2>
+            <p className="text-xl text-white/70 font-body">
               Ce qui nous guide au quotidien
             </p>
           </motion.div>
@@ -104,13 +104,13 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass border border-white/10 p-8 rounded-2xl text-center hover:border-primary/50 hover:glow-green transition-all group"
+                className="parchment border border-gold/30 p-8 rounded-2xl text-center hover:border-gold/50 hover:glow-gold transition-all group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4 group-hover:bg-primary/30 group-hover:scale-110 transition-all">
-                  <value.icon className="text-primary" size={32} />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-dark/20 rounded-full mb-4 group-hover:bg-red-dark/30 group-hover:scale-110 transition-all">
+                  <value.icon className="text-red-dark" size={32} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{value.title}</h3>
-                <p className="text-white/70">{value.description}</p>
+                <h3 className="text-xl font-display font-semibold mb-3 text-red-dark">{value.title}</h3>
+                <p className="text-wood-dark/80 font-body">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -125,15 +125,15 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative glass-strong border border-primary/30 rounded-3xl p-12 max-w-3xl mx-auto glow-green"
+            className="relative parchment border border-gold/30 rounded-3xl p-12 max-w-3xl mx-auto glow-gold"
           >
-            <h2 className="text-3xl font-bold mb-4 text-white">Venez nous rendre visite !</h2>
-            <p className="text-xl mb-6 text-white/80">
+            <h2 className="text-3xl font-display font-bold mb-4 text-red-dark">Venez nous rendre visite !</h2>
+            <p className="text-xl mb-6 text-wood-dark/80 font-body">
               Nous serions ravis de vous accueillir et de partager notre passion avec vous.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 glass border border-primary/50 text-white px-8 py-4 rounded-full font-bold hover:bg-primary/20 hover:border-primary hover:glow-green-strong transition-all hover:scale-110"
+              className="inline-flex items-center gap-2 bg-red-dark border border-red-dark text-white px-8 py-4 rounded-full font-display font-bold hover:bg-red-dark/90 hover:glow-red-strong transition-all hover:scale-110"
             >
               Nous contacter
             </a>

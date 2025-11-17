@@ -4,25 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 142 71% 55%;
-    --primary-foreground: 0 0% 3%;
-    --secondary: 142 71% 45%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 142 71% 35%;
-    --accent-foreground: 0 0% 98%;
+    /* Nouvelle palette - Charte graphique Plan B */
+    --background: 46 28% 15%;        /* #2E1F1A - Marron bois foncé */
+    --foreground: 0 0% 90%;          /* Texte clair */
+    --card: 46 30% 20%;              /* Cartes légèrement plus claires */
+    --card-foreground: 0 0% 95%;
+    --popover: 46 30% 20%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 4 79% 36%;            /* #A41712 - Rouge foncé */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 58% 56%;         /* #D1A84A - Or */
+    --secondary-foreground: 46 28% 15%;
+    --muted: 46 25% 25%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 42 58% 56%;            /* Or pour accents */
+    --accent-foreground: 46 28% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 142 71% 55%;
+    --border: 46 25% 30%;
+    --input: 46 25% 25%;
+    --ring: 4 79% 36%;               /* Rouge foncé */
     --radius: 0.75rem;
   }
 }
@@ -35,54 +36,116 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-black text-white antialiased;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(34, 197, 94, 0.1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(34, 197, 94, 0.05) 0px, transparent 50%);
+    @apply text-white antialiased;
+    font-family: 'Montserrat', sans-serif;
+    /* Fond noir */
+    background-color: #000000;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/logo upscale.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', 'Playfair Display', serif;
   }
 }
 
 @layer utilities {
+  /* Effet parchemin pour les bannières */
+  .parchment {
+    background: linear-gradient(135deg, #E8D7A8 0%, #D4C19A 100%);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(209, 168, 74, 0.3);
+  }
+  
+  .parchment-dark {
+    background: linear-gradient(135deg, #D4C19A 0%, #C0A882 100%);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
   .glass {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(46, 31, 26, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(209, 168, 74, 0.2);
   }
   
   .glass-strong {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(46, 31, 26, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(209, 168, 74, 0.3);
   }
   
-  .glow-green {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.2);
+  .glow-red {
+    box-shadow: 0 0 20px rgba(164, 23, 18, 0.4), 0 0 40px rgba(164, 23, 18, 0.2);
   }
   
-  .glow-green-strong {
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3);
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(209, 168, 74, 0.4), 0 0 40px rgba(209, 168, 74, 0.2);
+  }
+  
+  .glow-red-strong {
+    box-shadow: 0 0 30px rgba(164, 23, 18, 0.6), 0 0 60px rgba(164, 23, 18, 0.3);
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg, #A41712 0%, #D1A84A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D1A84A 0%, #E8D7A8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .border-gradient {
-    border-image: linear-gradient(135deg, rgba(34, 197, 94, 0.5), rgba(34, 197, 94, 0.1)) 1;
+    border-image: linear-gradient(135deg, rgba(164, 23, 18, 0.5), rgba(209, 168, 74, 0.3)) 1;
+  }
+  
+  .border-gradient-gold {
+    border-image: linear-gradient(135deg, rgba(209, 168, 74, 0.6), rgba(232, 215, 168, 0.3)) 1;
   }
   
   .text-shimmer {
     background: linear-gradient(
       90deg,
       #ffffff 0%,
-      #22c55e 50%,
+      #D1A84A 50%,
       #ffffff 100%
     );
     background-size: 200% auto;
@@ -110,7 +173,7 @@
     inset: 0;
     border-radius: 1rem;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.5), rgba(34, 197, 94, 0.1));
+    background: linear-gradient(135deg, rgba(164, 23, 18, 0.5), rgba(209, 168, 74, 0.3));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;

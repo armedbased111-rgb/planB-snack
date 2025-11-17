@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative z-20">
       <CursorEffect />
       <ScrollProgress />
       <ScrollToTop />
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
-          className="flex-1"
+          className="flex-1 relative z-20"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -20, scale: 0.98 }}

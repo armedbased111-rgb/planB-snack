@@ -36,7 +36,7 @@ const Home = () => {
         {/* Animated gradient orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-dark/20 rounded-full blur-3xl"
             animate={{
               x: [0, 100, 0],
               y: [0, 50, 0],
@@ -49,7 +49,7 @@ const Home = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/15 rounded-full blur-3xl"
             animate={{
               x: [0, -100, 0],
               y: [0, -50, 0],
@@ -71,16 +71,16 @@ const Home = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-6xl md:text-8xl font-bold mb-6"
+            className="text-6xl md:text-8xl font-display font-bold mb-6"
           >
             <span className="text-white">Bienvenue au</span>
             <motion.span 
               className="block text-gradient mt-2"
               animate={{
                 textShadow: [
-                  "0 0 20px rgba(34, 197, 94, 0.5)",
-                  "0 0 40px rgba(34, 197, 94, 0.8)",
-                  "0 0 20px rgba(34, 197, 94, 0.5)",
+                  "0 0 20px rgba(164, 23, 18, 0.5)",
+                  "0 0 40px rgba(209, 168, 74, 0.8)",
+                  "0 0 20px rgba(164, 23, 18, 0.5)",
                 ],
               }}
               transition={{
@@ -95,7 +95,7 @@ const Home = () => {
           
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto font-body"
           >
             Votre snack pizzeria de quartier. Des produits frais, une ambiance conviviale.
           </motion.p>
@@ -106,18 +106,18 @@ const Home = () => {
           >
             <Link
               to="/menu"
-              className="group relative inline-flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full font-bold hover:scale-110 transition-all glow-green-strong overflow-hidden"
+              className="group relative inline-flex items-center gap-2 bg-red-dark text-white px-8 py-4 rounded-full font-display font-bold hover:scale-110 transition-all glow-red-strong overflow-hidden"
             >
               <span className="relative z-10">Découvrir le menu</span>
               <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute inset-0 bg-gradient-to-r from-red-dark to-gold opacity-0 group-hover:opacity-100 transition-opacity"
                 initial={false}
               />
             </Link>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 glass border border-primary/30 text-white px-8 py-4 rounded-full font-semibold hover:border-primary hover:bg-primary/10 transition-all hover:scale-105"
+              className="group inline-flex items-center gap-2 glass border border-gold/30 text-white px-8 py-4 rounded-full font-body font-semibold hover:border-gold hover:bg-parchment/10 transition-all hover:scale-105"
             >
               Nous contacter
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -136,8 +136,8 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Pourquoi Plan B ?</h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">Pourquoi Plan B ?</h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto font-body">
               Une expérience culinaire simple et authentique
             </p>
           </motion.div>
@@ -166,24 +166,24 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl glass border border-white/10 hover:border-primary/50 hover:glow-green transition-all group relative overflow-hidden"
+                className="text-center p-8 rounded-2xl glass border border-gold/30 hover:border-gold/50 hover:glow-gold transition-all group relative overflow-hidden"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute inset-0 bg-gradient-to-br from-red-dark/0 via-gold/10 to-red-dark/0 opacity-0 group-hover:opacity-100 transition-opacity"
                   initial={false}
                 />
                 <div className="relative z-10">
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4 group-hover:bg-primary/30 transition-all"
+                    className="inline-flex items-center justify-center w-16 h-16 bg-red-dark/20 rounded-full mb-4 group-hover:bg-red-dark/30 transition-all"
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <feature.icon className="text-primary" size={32} />
+                    <feature.icon className="text-red-dark" size={32} />
                   </motion.div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
-                  <p className="text-white/70">{feature.description}</p>
+                  <h3 className="text-xl font-display font-semibold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-white/70 font-body">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -202,8 +202,8 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-dark/20 via-gold/10 to-red-dark/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(164,23,18,0.1),transparent_70%)]" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -211,15 +211,15 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white">
               Prêt à découvrir nos saveurs ?
             </h2>
-            <p className="text-xl mb-8 text-white/80">
+            <p className="text-xl mb-8 text-white/80 font-body">
               Venez nous rendre visite ou consultez notre menu en ligne
             </p>
             <Link
               to="/menu"
-              className="inline-flex items-center gap-2 glass border border-primary/50 text-white px-8 py-4 rounded-full font-bold hover:bg-primary/20 hover:border-primary hover:glow-green-strong transition-all hover:scale-110"
+              className="inline-flex items-center gap-2 glass border border-gold/50 text-white px-8 py-4 rounded-full font-display font-bold hover:bg-parchment/20 hover:border-gold hover:glow-gold transition-all hover:scale-110"
             >
               Voir le menu complet
               <ArrowRight size={20} />

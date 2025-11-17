@@ -10,8 +10,8 @@ const Card = forwardRef(({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovered, setIsHovered] = useState(false)
 
-  const baseStyles = 'glass border border-white/10 rounded-2xl transition-all duration-300 relative overflow-hidden'
-  const hoverStyles = hover ? 'hover:border-primary/50 hover:glow-green' : ''
+  const baseStyles = 'glass border border-gold/20 rounded-2xl transition-all duration-300 relative overflow-hidden'
+  const hoverStyles = hover ? 'hover:border-gold/50 hover:glow-gold' : ''
 
   const handleMouseMove = (e) => {
     if (!hover) return
@@ -44,7 +44,7 @@ const Card = forwardRef(({
     >
       {isHovered && hover && (
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-red-dark/10 via-transparent to-gold/5 pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

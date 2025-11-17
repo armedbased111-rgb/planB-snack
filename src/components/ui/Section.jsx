@@ -20,10 +20,10 @@ const Section = forwardRef(({
             className="text-center mb-16"
           >
             {title && (
-              <h2 className="text-4xl font-bold mb-4 text-white">{title}</h2>
+              <h2 className="text-4xl font-display font-bold mb-4 text-white">{title}</h2>
             )}
             {subtitle && (
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">{subtitle}</p>
+              <p className="text-xl text-white/70 max-w-2xl mx-auto font-body">{subtitle}</p>
             )}
           </motion.div>
         )}

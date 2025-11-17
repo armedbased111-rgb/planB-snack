@@ -58,7 +58,7 @@ const GalleryGrid = () => {
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-red-dark transition-colors"
             >
               <X size={32} />
             </button>
